@@ -1,6 +1,6 @@
 # instacart_market_basket_analysis
 
-**Key Findings:** The tuned Light GBM model resulted in the highest F1-Score and the engineered up_reorder_ratio feature was the most important.  It represents the ratio of the number of times a user purchased a specific product over the number of orders placed since they first ordered it. 
+**Key Findings:** The tuned Light GBM model resulted in the highest F1-Score and the engineered up_reorder_ratio feature was the most important.  This feature represents the ratio of the number of times a user purchased a specific product over the number of orders placed since they first ordered it. 
 
 **Table of Contents**
 
