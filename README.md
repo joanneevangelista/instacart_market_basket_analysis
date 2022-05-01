@@ -41,15 +41,19 @@ A description of the datasets are as follows:
 
 **Exploratory Data Analysis**
 
-![](https://github.com/joanneevangelista/instacart_market_basket_analysis/blob/main/images/EDA.PNG)
+To better understand users' past purchasing behavior, visualizations were created using the prior_dataset.  
 
-The data was explored in order to identify underlying patterns in the existing dataset. In the first chart to the left we see the top 10 reordered products by department. Not surprisingly dairy and eggs is the highest, followed closely by pets, bakery, beverages and breakfast. 
+The bar chart below shows the reordered products by department sorted from highest to lowest. Not surprisingly, produce, dairy eggs, snacks, beverages, and frozen are at the top.
 
-In the next graph, the number of orders was modelled by hour of the day and filtered by day of the week. As we can see here, most users order later in the morning to early evening and the highest activity is generally on the weekends. 
+![](https://github.com/joanneevangelista/instacart_market_basket_analysis/blob/main/images/Count_By_Department.PNG)
 
-In the bottom left graph, we see the average number of products ordered over the days since prior order. It appears Instacart customers are weekly users as we can see that the average number of products ordered is highest when its been a week since the last order, then another slight peak after 14 days, 21 days and 28 days.
+The next graph models the number of orders by hour of the day. As we can see here, most users order later in the morning to early evening. 
 
-Finally, in the bottom right, visualization was created based on the placement of items in the cart. In this sample dataset, it looks like consumers prioritize alochol, beverages and pets as these are the items that are put in the cart first on average. 
+![](https://github.com/joanneevangelista/instacart_market_basket_analysis/blob/main/images/Order_Hour_Of_Day.PNG)
+
+The word cloud visualization was created to capture how frequently the past products appear in users' orders. In this case, Bananas are the most popular followed by organic products. 
+
+![](https://github.com/joanneevangelista/instacart_market_basket_analysis/blob/main/images/Word%20Cloud.PNG)
 
 **Modelling Approach**
 
@@ -60,6 +64,8 @@ In order to work with the data and engineer new features, the relational dataset
 ![](https://github.com/joanneevangelista/instacart_market_basket_analysis/blob/main/images/Relational_Map.PNG)
 
 Each of the features in the raw datasets were easy to interpret and there were very little missing values. Only a few data points were missing in the days_since_prior_order feature, however these represent the first order for a specific customer. These missing data points were treated as nulls and did not cause any issues.   
+
+![](https://github.com/joanneevangelista/instacart_market_basket_analysis/blob/main/images/Missing_Values.PNG)
 
 Imbalance of the target class is an important consideration as it can cause the model to over fit by misclassifying the minority class. In this case, there was not much imbalance in the data. For both the prior and training datasets, the proportion of reordered items in comparison to not reordered was just under 60% for both. Thus, it was not critical to implement techniques such as ADASYN and Random Oversampling. Below are visual representations of the count of ‘reordered’ items, the target feature, in the prior and train data.  
 
@@ -101,9 +107,9 @@ As part of the modelling process, a threshold probability was used to determine 
 
 ![](https://github.com/joanneevangelista/instacart_market_basket_analysis/blob/main/images/Threshold.png)
 
-_Software and Packages Used_
+_Tech Stack_
 
-For a portion of the exploratory data analysis, Tableau was used. However, most of the work was performed in Python. The packages used in Python include: pandas, numpy, matplotlib, seaborn, sklearn, lightgbm, RandomForestClassifer, xgboost, scipy, mlxtend.frequent_patterns. 
+Most of the work was performed in Python. The packages used in Python include: pandas, numpy, matplotlib, seaborn, sklearn, lightgbm, RandomForestClassifer, xgboost, scipy, mlxtend.frequent_patterns. 
 
 **Results**
 
